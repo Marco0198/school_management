@@ -1,5 +1,6 @@
 package ac.za.mycput.controller.student;
 
+import ac.za.mycput.domain.name.Name;
 import ac.za.mycput.domain.student.Student;
 import ac.za.mycput.factory.student.StudentFactory;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,7 +26,9 @@ private Student student;
 private String baseUrl;
 @BeforeEach
      void setUp(){
-     this.student= StudentFactory.createStudent("99","thimsmarco@com");
+    Name name= new Name("marco","mulonday","tshimanga");
+
+    this.student= StudentFactory.createStudent("99","thimsmarco@com",name);
      this.baseUrl ="http://localHost:"+this.port+"/student/";
 
      }

@@ -1,4 +1,5 @@
 package ac.za.mycput.domain.student;
+import ac.za.mycput.domain.employee.Employee;
 import ac.za.mycput.domain.name.Name;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -19,9 +20,20 @@ public class Student {
     public Name getName() {return name;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId='" + studentId + '\'' +
+                ", email='" + email + '\'' +
+                ", name=" + name+
+                '}';
+    }
+
     public Student(Builder builder) {
         this.studentId= builder.studentId;
+        this.name= builder.name;
         this.email= builder.email;
+
     }
     public Student() {}
 
@@ -34,6 +46,7 @@ public class Student {
         @Column(name="student_id")
         private String studentId;
         @Column(name="email")
+        private Name name;
 
         private String  email;
 
@@ -42,7 +55,10 @@ public class Student {
             return this;
         }
 
-
+        public  Builder setName(Name name) {
+            this.name = name;
+            return this;
+        }
         public Builder setEmail(String email){
             this.email= email;
             return this;
@@ -52,7 +68,7 @@ public class Student {
 
             this.studentId=student.studentId;
             this.email=student.email;
-
+             this.name=student.name;
             return this;
         }
         public Student build(){

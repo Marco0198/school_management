@@ -20,19 +20,30 @@ public class Employee {
 
     public Employee(Builder builder) {
         this.staffId= builder.staffId;
+        this.name= builder.name;
         this.email= builder.email;
     }
     public Employee() {}
 
     public String getStaffId() {return staffId;}
-    public String getStudentEmail() {return email;}
+    public String getEmail() {return email;}
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "staffId='" + staffId + '\'' +
+                ", email='" + email + '\'' +
+                ", name=" + name +
+                '}';
+    }
 
     public static class Builder{
         @Id
         @Column(name="student_id")
         private String staffId;
         @Column(name="email")
+        @Embedded
+        private Name name;
 
         private String  email;
 
@@ -41,7 +52,10 @@ public class Employee {
             return this;
         }
 
-
+        public Builder  setName(Name name) {
+            this.name = name;
+            return this;
+        }
         public Builder setEmail(String email){
             this.email= email;
             return this;
@@ -51,6 +65,7 @@ public class Employee {
 
             this.staffId=staffId;
             this.email=email;
+            this.name=name;
 
             return this;
         }
