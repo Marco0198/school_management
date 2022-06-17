@@ -1,11 +1,16 @@
 package ac.za.mycput.domain.employeeAddress;
 
+import ac.za.mycput.domain.address.Address;
 import com.sun.istack.NotNull;
-import org.apache.tomcat.jni.Address;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import java.io.Serializable;
-
+/*
+ * Student Name: Damian du Toit
+ * Student Number: 219200203
+ * EmployeeAddress.java
+ * Date : 13th June 2022
+ */
 @Entity
 public class EmployeeAddress implements Serializable {
     @NotNull
