@@ -58,6 +58,13 @@ public class Country implements Serializable
             this.name=name;
             return this;
         }
+
+        public Builder copy(Country country)
+        {
+            this.id= country.id;
+            this.name= country.name;
+            return this;
+        }
         public Country build()
         {
             return new Country(this);
