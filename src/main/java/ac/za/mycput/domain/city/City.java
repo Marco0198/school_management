@@ -32,38 +32,6 @@ public class City implements Serializable {
         this.country = builder.country;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return cityName;
-    }
-
-    public void setName(String name) {
-        this.cityName = name;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-    @Override
-    public String toString() {
-        return "City{" +
-                "id='" + id + '\'' +
-                ", name='" + cityName + '\'' +
-                ", country=" + country +
-                '}';
-    }
 
     public static class Builder {
         public String id;
