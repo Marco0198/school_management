@@ -3,6 +3,7 @@ package ac.za.mycput.domain.city;
 import ac.za.mycput.domain.country.Country;
 import com.sun.istack.NotNull;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ import java.io.Serializable;
  * Date : 13th June 2022
  */
 @Entity
+@Embeddable
 public class City implements Serializable {
     @NotNull @Id
     public String id;
