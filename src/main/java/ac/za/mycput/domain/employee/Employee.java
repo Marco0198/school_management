@@ -1,14 +1,11 @@
 package ac.za.mycput.domain.employee;
-
-
-
 import ac.za.mycput.domain.name.Name;
 import ac.za.mycput.domain.student.Student;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Id;
-import javax.persistence.Transient;
+
 import javax.validation.constraints.NotNull;
 
 public class Employee {
@@ -27,7 +24,7 @@ public class Employee {
     }
     public Employee() {}
 
-    public String getStafftId() {return staffId;}
+    public String getStaffId() {return staffId;}
     public String getStudentEmail() {return email;}
 
 
@@ -39,8 +36,8 @@ public class Employee {
 
         private String  email;
 
-        public Builder setStudentId(String studentId){
-            this.staffId= studentId;
+        public Builder setStaffId(String staffId){
+            this.staffId= staffId;
             return this;
         }
 
